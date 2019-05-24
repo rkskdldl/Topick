@@ -224,7 +224,34 @@ app.post('/edit_comment',(req,res)=>{
     });
   }
 });
-
+app.post('/delete_topic',(req,res)=>{
+if(req.body!=undefined){
+connection.query('delete from topic where topic_id =?',[req.body.topic_id],(err,result)=>{
+  if(err){
+    console.log(err);
+    console.log("topic 삭제 오류");
+    res.send("topic 삭제 오류");
+  }else{
+    console.log("topic 삭제 성공");
+    res.send("topic 삭제 성공");
+  }
+});
+}
+});
+app.post('/delete_comment',(req,res)=>{
+  if(req.body!=undefined){
+  connection.query('delete from comment where comment_id =?',[req.body.comment_id],(err,result)=>{
+    if(err){
+      console.log(err);
+      console.log("덧글 삭제 오류");
+      res.send("덧글 삭제 오류");
+    }else{
+      console.log("덧글 삭제 성공");
+      res.send("덧글 삭제 성공");
+    }
+  });
+  }
+  });
 app.listen(3000,()=>{
 console.log('Example app listening on port 3000!');
 });
