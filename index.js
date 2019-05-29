@@ -33,7 +33,7 @@ app.post('/register',(req,res)=>{
     if(err){
       console.log(err);
       }
-      console.log("결과값은?")
+      console.log("결과값은?");
      console.log(result.length);
       if(result.length==0){
         connection.query('insert into user set ?',user,(err,rows,fields)=>{

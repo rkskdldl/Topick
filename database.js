@@ -1,9 +1,9 @@
 module.exports = {
-    host:'localhost',
-    user:'root',
-    password:'397765',
-    port:3333,
-    database:'topick',
+    host:'10.0.0.1',
+    user:'rkskdldl',
+    password:'RKSKdl98',
+    port:3306,
+    database:'rkskdldl98',
     insecureAuth : true,
     multipleStatements : true
 };
